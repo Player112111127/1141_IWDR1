@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>品牌故事</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ================= Reset ================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Noto Sans TC", sans-serif;
+      background: #fcf8f1;
+      overflow-x: hidden;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    /* ================= Navbar ================= */
+/* ===== Navbar（全站統一） ===== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #f3e9d2;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .1)
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 72px;
+      display: flex;
+      justify-content: flex-end;
+      /* ✅ 改成靠右 */
+      align-items: center;
+      padding-right: 20px;
+      /* ✅ 讓右邊不要貼死 */
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px
+    }
+
+    .nav-links a {
+      color: #7a5e3c;
+      font-size: 16px;
+      position: relative;
+      padding-bottom: 4px
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: #c6a663;
+      transition: .3s
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%
+    }
+
+    /* ===== RWD ===== */
+    @media (max-width: 981px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #F9EFD9;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 10px;
+        padding: 15px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .submenu {
+        position: static;
+        transform: none;
+        background: transparent;
+      }
+    }
+
+    /* ================= Spacer ================= */
+    .nav-spacer {
+      height: 80px;
+    }
+
+    /* ================= Banner ================= */
+    .banner {
+      height: 320px;
+      background: url("https://images.unsplash.com/photo-1541167760496-1628856ab772") center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .banner h1 {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 20px 50px;
+      border-radius: 14px;
+      font-size: 36px;
+      letter-spacing: 6px;
+      color: #7a5e3c;
+    }
+
+    /* ================= Content ================= */
+    .story-container {
+      width: 85%;
+      max-width: 1000px;
+      margin: 60px auto;
+      color: #5a4632;
+    }
+
+    .story-section {
+      margin-bottom: 60px;
+    }
+
+    .story-section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      border-left: 6px solid #c6a663;
+      padding-left: 15px;
+      color: #7a5e3c;
+    }
+
+    .story-section p {
+      line-height: 1.9;
+      margin-bottom: 15px;
+    }
+
+    /* ===== Founder ===== */
+    .founder {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .founder img {
+      width: 280px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* ===== Vision ===== */
+    .vision-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    .vision-card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .vision-card h3 {
+      margin-bottom: 15px;
+      color: #7a5e3c;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= Navbar ================= -->
+  <header class="site-header">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="homepage.html">首頁</a></li>
+        <li><a href="menu.html">菜單</a></li>
+        <li><a href="order.html">線上訂購</a></li>
+        <li><a href="storepage.html">門市據點</a></li>
+        <li><a href="BrandStory.html" class="active">品牌故事</a></li>
+        <li><a href="Frequently Asked Questions.html">常見問題</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="nav-spacer"></div>
+
+  <!-- ================= Banner ================= -->
+  <section class="banner">
+    <h1>品牌故事</h1>
+  </section>
+
+  <!-- ================= Content ================= -->
+  <div class="story-container">
+
+    <section class="story-section" id="brand-idea">
+      <h2>品牌理念</h2>
+      <p>
+        我們相信，一杯飲料不只是解渴的選擇，而是陪伴生活每個片刻的溫柔存在。
+      </p>
+      <p>
+        在快速流動的日常中，我們希望用一杯剛剛好的味道，讓人停下腳步，感受片刻的安心與放鬆。
+      </p>
+      <p>
+        從原料的來源、製作的流程，到交到你手中的那一刻，我們堅持簡單、透明與誠實，
+        不多一分負擔，只留下純粹的風味與值得信賴的品質。
+      </p>
+      <p>
+        這不只是一杯飲料，而是一種對生活的態度——
+        在平凡中，選擇用心。
+      </p>
+    </section>
+
+    <section class="story-section">
+      <h2>創辦人故事</h2>
+      <div class="founder">
+        <img src="/img/BBS.png" alt="創辦人照片">
+        <div>
+          <p>創辦人成長於街角飲料店，看著飲品成為人們日常的陪伴。</p>
+          <p>希望打造一個值得信賴、每天都想再來一杯的品牌。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <h2>品牌願景</h2>
+      <div class="vision-grid">
+        <div class="vision-card">
+          <h3>品質堅持</h3>
+          <p>嚴選原料，用心製作</p>
+        </div>
+        <div class="vision-card">
+          <h3>在地溫度</h3>
+          <p>成為城市日常的一部分</p>
+        </div>
+        <div class="vision-card">
+          <h3>永續經營</h3>
+          <p>兼顧環保與未來</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+
+</body>
+
+</html>

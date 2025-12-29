@@ -21,79 +21,58 @@
       list-style: none;
     }
 
-/* ================= Navbar ================= */
-
-    .navbar{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: #f3e9d2;
-    color: #fff;
-    position: fixed;
-    padding: 10px 20px;
-    top: 0;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-left: -39px;
-    z-index: 10;
+/* ===== Navbar（全站統一） ===== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #f3e9d2;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .1)
     }
 
-    .nav-links{
-    display: flex;
-    gap: 40px;
-    align-items: center;
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 72px;
+      display: flex;
+      justify-content: flex-end;
+      /* ✅ 改成靠右 */
+      align-items: center;
+      padding-right: 20px;
+      /* ✅ 讓右邊不要貼死 */
     }
 
-    .nav-links li{
-    position: relative;
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px
     }
 
-    .nav-links a{
-    text-decoration: none;
-    font-size: 15px;
-    padding: 8px 12px;
-    transition: color 0.3s ease;
-    color: #7a5e3c;
+    .nav-links a {
+      color: #7a5e3c;
+      font-size: 16px;
+      position: relative;
+      padding-bottom: 4px
     }
 
-    .nav-links a:hover{
-    border: 2px solid #c6a663;
-    color: #c6a663;
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: #c6a663;
+      transition: .3s
     }
 
-    .submenu{
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: -40px;
-    width: 150px;
-    padding-bottom: 15px;
-    background-color: #FFF4E6;
-    padding-top: 10px;
-    border-radius: 8px;
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%
     }
-
-    .submenu li{
-    padding-bottom: 15px;
-    }
-
-    .has-submenu:hover .submenu{
-    display: block;
-    }
-
-    .hamburger{
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    }
-
-    .hamburger span{
-    background-color: #B08968;
-    width: 25px;
-    height: 3px;
-    margin: 3px 0;
-    transition: all 0.3s ease;
-    }    
+  
 
   /* ===== 手機板響應式 ===== */
   @media (max-width: 981px){
@@ -191,26 +170,15 @@
 <body>
 
   <!-- ================= Navbar ================= -->
-  <header>
+  <header class="site-header">
     <nav class="navbar">
-            <ul class="nav-links">
+      <ul class="nav-links">
         <li><a href="homepage.html">首頁</a></li>
         <li><a href="menu.html">菜單</a></li>
-        <li><a href="#">線上訂購</a></li>
-        <li><a href="storepage.html">門市據點</a></li>
-        
-        <li class="has-submenu">
-          <a href="#">品牌故事</a>
-          <ul class="submenu">
-            <li><a href="#">品牌理念</a></li>
-            <li><a href="#">創辦人介紹</a></li>
-            <li><a href="#">品牌願景</a></li>
-          </ul>
-        </li>
-
-        <li class="has-submenu">
-          <a href="Frequently Asked Questions.html" class="active">常見問題</a>
-        </li>
+        <li><a href="order.html">線上訂購</a></li>
+        <li><a href="storepage.html" class="active">門市據點</a></li>
+        <li><a href="BrandStory.html">品牌故事</a></li>
+        <li><a href="Frequently Asked Questions.html">常見問題</a></li>
       </ul>
     </nav>
   </header>
